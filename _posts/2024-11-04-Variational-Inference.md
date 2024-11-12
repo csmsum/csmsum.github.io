@@ -3,13 +3,9 @@ layout: post
 title: Variational Inference with Normalizing Flow review
 date: 2024-11-04 20:15:00-0400
 description: Variational Inference.
-tags:
-
-- Variational
-- Inference
-  categories: Variational Inference
-  related_posts: false
-
+tags: Variational Inference
+categories: Variational Inference
+related_posts: false
 ---
 
 %%
