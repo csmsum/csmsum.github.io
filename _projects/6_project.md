@@ -6,7 +6,6 @@ img:
 importance: 4
 category: fun
 published: false
-
 ---
 
 Every project has a beautiful feature showcase page.

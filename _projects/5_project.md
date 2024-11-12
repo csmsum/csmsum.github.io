@@ -6,7 +6,6 @@ img: assets/img/1.jpg
 importance: 3
 category: fun
 published: false
-
 ---
 
 Every project has a beautiful feature showcase page.

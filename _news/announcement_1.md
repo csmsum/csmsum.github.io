@@ -6,4 +6,3 @@ related_posts: false
 ---
 
 Congratulate the beginning of my website!
-

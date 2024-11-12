@@ -67,15 +67,7 @@
     {
       "name": "Python",
       "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "PyTorch",
-        "Tensorflow",
-        "Scikit-learn", 
-        "Pandas",
-        "Numpy",
-        "Matplotlib",
-        "Seaborn"  
-      ]
+      "keywords": ["PyTorch", "Tensorflow", "Scikit-learn", "Pandas", "Numpy", "Matplotlib", "Seaborn"]
     }
   ],
   "languages": [
