@@ -1,3 +1,4 @@
+---
 layout: post
 title: Variational Inference with Normalizing Flow review
 date: 2024-11-04 20:15:00-0400
