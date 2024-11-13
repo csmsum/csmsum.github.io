@@ -7,7 +7,7 @@ tags:
   - Variational
   - Inference
 categories: Variational Inference
-related_posts: false
+related\_posts: false
 pseudocode: true
 ---
 
@@ -19,10 +19,10 @@ pseudocode: true
 
 ## 1. Train
 
-Instead of tuning $\mathbf{w}$, tune $p(\mathbf{w}|\mathcal{D}\_{\text{train}})$. The posterior distribution is:
+Instead of tuning $\mathbf{w}$, tune $p(\mathbf{w}\mid \mathcal{D}\_{\text{train}})$. The posterior distribution is:
 
 $$
-p(\mathbf{w}|\mathcal{D}_{\text{train}}) = \frac{p(\mathcal{D}_{\text{train}}|\mathbf{w}) p(\mathbf{w})}{p(\mathcal{D}_{\text{train}})}
+p(\mathbf{w}\mid \mathcal{D}\_{\text{train}}) = \frac{p(\mathcal{D}\_{\text{train}}\mid \mathbf{w}) p(\mathbf{w})}{p(\mathcal{D}\_{\text{train}})}
 $$
 
 Calculating the posterior is often difficult since calculating the evidence $p(\mathcal{D}\_{\text{train}})$ is nearly impossible.
@@ -32,31 +32,31 @@ Calculating the posterior is often difficult since calculating the evidence $p(\
 To approximate:
 
 $$
-p(y|\mathcal{D}) = \int p(y|\mathbf{w}) p(\mathbf{w}|\mathcal{D}) d\mathbf{w} = E_{p(\mathbf{w}|\mathcal{D})}[p(\hat{y}|\mathbf{w})]
+p(y\mid \mathcal{D}) = \int p(y\mid \mathbf{w}) p(\mathbf{w}\mid \mathcal{D}) d\mathbf{w} = E\_{p(\mathbf{w}\mid \mathcal{D})}[p(\hat{y}\mid \mathbf{w})]
 $$
 
 This can be approximated by:
 
 $$
-LHS \approx \frac{1}{n} \frac{\sum_{s=1}^n w_i\cdot\hat{y}(x)}{\sum_{s=1}^n w_i}
+LHS \approx \frac{1}{n} \frac{\sum\_{s=1}^n w\_i\cdot\hat{y}(x)}{\sum\_{s=1}^n w\_i}
 $$
 
-where $\mathbf{w}_{i} \sim p(\mathbf{w}|\mathcal{D})$ and $\hat{y}_{\mathbf{w}}(x)=f(x,\mathbf{w})$.
+where $\mathbf{w}\_i \sim p(\mathbf{w}\mid \mathcal{D})$ and $\hat{y}\_{\mathbf{w}}(x)=f(x,\mathbf{w})$.
 That is, replacing
-| Neural Network (NN) | Bayesian Neural Network (BNN) |
-|----------------------|----------------------------------------------------|
-| $\mathbf{w}$ | $p(\mathbf{w}|\mathcal{D})$ |
-| $f_{\mathbf{w}}(x)$ | $\int f_{\mathbf{w}}(x) p(\mathbf{w}|\mathcal{D}) d\mathbf{w}$ |
+\mid Neural Network (NN) \mid Bayesian Neural Network (BNN) \mid
+\mid ----------------------\mid ----------------------------------------------------\mid
+\mid $\mathbf{w}$ \mid $p(\mathbf{w}\mid \mathcal{D})$ \mid
+\mid $f\_{\mathbf{w}}(x)$ \mid $\int f\_{\mathbf{w}}(x) p(\mathbf{w}\mid \mathcal{D}) d\mathbf{w}$ \mid
 
-1. **Sampling Methods**: Sample $\mathbf{w}$ from $p(\mathbf{w}|\mathcal{D})$ and compute $p(y|\mathbf{w})$ for each sample.
-2. **Variational Methods**: Model $p(\mathbf{w}|\mathcal{D})$ using a parametrized distribution $q(\mathbf{w})$ and optimize to approximate the true posterior.
+1. **Sampling Methods**: Sample $\mathbf{w}$ from $p(\mathbf{w}\mid \mathcal{D})$ and compute $p(y\mid \mathbf{w})$ for each sample.
+2. **Variational Methods**: Model $p(\mathbf{w}\mid \mathcal{D})$ using a parametrized distribution $q(\mathbf{w})$ and optimize to approximate the true posterior.
 
 # Variational Inferences: A Review for statistics
 
 Consider a joint density of latent variables $\mathbf{z}$ and observations $\mathbf{x}$:
 
 $$
-p(\mathbf{x}, \mathbf{z}) = p(\mathbf{x}|\mathbf{z}) p(\mathbf{z})
+p(\mathbf{x}, \mathbf{z}) = p(\mathbf{x}\mid \mathbf{z}) p(\mathbf{z})
 $$
 
 ## A short review of Bayesian statistics
@@ -67,60 +67,61 @@ One of the main premises of Bayesian statistics is that we set the population pa
 Note the expectation of bayes estimator is weighted average of the expectation of likelihood distribution and of prior distribution.
 
 $$
-\mathbb{E}[\hat{\theta}_{\text{Bayes}}] = r_1 \mathbb{E}[\theta | \mathcal{D}] + r_2 \mathbb{E}[\theta_{\text{prior}}]
+\mathbb{E}[\hat{\theta}\_{\text{Bayes}}] = r\_1 \mathbb{E}[\theta \mid  \mathcal{D}] + r\_2 \mathbb{E}[\theta_{prior}]
 $$
 
 $$
-\text{where } \mathbb{E}[\theta | \mathcal{D}]= \mathbb{E}[\hat{\theta}_{\text{MLE}}] \text{ (of frequentist)}
+\text{where } \mathbb{E}[\theta \mid  \mathcal{D}]= \mathbb{E}[\hat{\theta}_{MLE}] \text{ (of frequentist)}
 $$
 
 ### How to calculate predictive posterior distribution
 
 $$
-p(\tilde{y}|y) = \int p(\tilde{y}, \theta|y)d\theta = \int p(\tilde{y}|\theta, y)p(\theta|y)d\theta \text{ }(\because \tilde{y}|\theta \perp \!\!\! \perp y|\theta)
+p(\tilde{y}\mid y) = \int p(\tilde{y}, \theta\mid y)d\theta = \int p(\tilde{y}\mid \theta, y)p(\theta\mid y)d\theta \text{ }(\because \tilde{y}\mid \theta \perp \!\!\! \perp y\mid \theta)
 $$
 
-where $p(\tilde{y}|\theta)$ is likelihood and $p(\theta|y)$ is posterior distribution.
+where $p(\tilde{y}\mid \theta)$ is likelihood and $p(\theta\mid y)$ is posterior distribution.
 
 ### Numerical Integration
 
 #### Monte Carlo
 
-To calculate expectations of functions of the posterior distribution, $E[h(\theta)|y]$, use Monte Carlo methods or importance sampling. This is available when we know the posterior distribution of parameters,$\theta$, which is easily sampled.
+To calculate expectations of functions of the posterior distribution, $E[h(\theta)\mid y]$, use Monte Carlo methods or importance sampling. This is available when we know the posterior distribution of parameters,$\theta$, which is easily sampled.
 
 $$
-E[h(\theta)|y] = \int h(\theta)\cdotp(\theta|y)d\theta
+E[h(\theta)\mid y] = \int h(\theta)\cdotp(\theta\mid y)d\theta
 $$
 
-1. Sample $\theta_1, \cdots, \theta_N$ from posterior distribution $\theta|y$.
-2. calculate $h(\theta_1), \cdots, h(\theta_N)$. 3.$\frac{1}{n}\sum*{i=1}^{N}{h(\theta_i)} = \bar{h*{MC}} \rightarrow^{n\rightarrow\infty}\int h(\theta)p(\theta|y)d\theta = E[h(\theta|y)]$.
+1. Sample $\theta\_1, \cdots, \theta\_N$ from posterior distribution $\theta\mid y$.
+2. calculate $h(\theta\_1), \cdots, h(\theta\_N)$.
+3. $\frac{1}{n}\sum_{i=1}^{N}{h(\theta\_i)} = \bar{h}_{MC} \xrightarrow{n\rightarrow\infty}\int h(\theta)p(\theta \mid y)d\theta = E[h(\theta\mid y)]$.
 
 #### Rejection Sampling
 
 We try rejection sampling if we don't know the prior distribution of $\theta$.
-We want to find the expectation of (the function of) the posterior distribution$h(\theta)$or$h(\theta|\mathcal{D}) $. WLOG,
+We want to find the expectation of (the function of) the posterior distribution$h(\theta)$or$h(\theta\mid \mathcal{D}) $. WLOG,
 
 $$
-\mathbb{E}[h(\theta)] = \int h(\theta) p(\theta|\mathcal{D}) \, d\theta
+\mathbb{E}[h(\theta)] = \int h(\theta) p(\theta\mid \mathcal{D}) \, d\theta
 $$
 
-Since we cannot directly sample from$p(\theta|\mathcal{D}) $:
+Since we cannot directly sample from$p(\theta\mid \mathcal{D}) $:
 
-1. Sample $\theta^_, \theta_1, \dots, \theta_S$, where $\theta^_ \sim g(\theta)$, and $g(\theta)$ is the proposal density.
-2. Choose$M$ such that $p(\theta|\mathcal{D}) \leq M g(\theta)$ for all$\theta $.
-3. Sample auxiliary variable $u*1, \dots, u_S \sim \text{Uniform}(0, 1)$.
+1. Sample $\theta\_{1}, \theta\_{2}, \dots, \theta\_{S}$, where $\theta\_{i} \sim g(\theta)$, and $g(\theta)$ is the proposal density.
+2. Choose $M$ such that $p(\theta\mid \mathcal{D}) \leq M g(\theta)$ for all $\theta$.
+3. Sample auxiliary variable $u*1, \dots, u\_S \sim \text{Uniform}(0, 1)$.
 4. a
 
-- If $u \leq \frac{p(\theta^_|\mathcal{D})}{M g(\theta^_)}$, accept $\theta^\* $.
-- If $u > \frac{p(\theta^_|\mathcal{D})}{M g(\theta^_)}$, reject $\theta^\_ $.
+- If $u \leq \frac{p(\theta^\* \mid \mathcal{D})}{M g(\theta^\*)}$, accept $\theta^\* $.
+- If $u > \frac{p(\theta^\* \mid \mathcal{D})}{M g(\theta^\*)}$, reject $\theta^\* $.
 
 5. Repeat steps 3 and 4.
 6. Calculate:
    $$
-   \frac{1}{n} \sum*{i=1}^{n} h(\theta_i) \approx \mathbb{E}*{R.S.}[h(\theta)] = \bar{h}\_{R.S.} \rightarrow^{n\rightarrow\infty} \int h(\theta) p(\theta|\mathcal{D}) \, d\theta = \mathbb{E}[h(\theta)].
+   \frac{1}{n} \sum_{i=1}^{n} h(\theta_{i}) \approx \mathbb{E}_{R.S.}[h(\theta)] = \bar{h}_{R.S.} \xrightarrow{n\rightarrow\infty} \int h(\theta) p(\theta\mid \mathcal{D}) \, d\theta = \mathbb{E}[h(\theta)].
    $$
 
-Sampling auxiliary variable and accepting/declining $\theta^*$ is equivalent to accepting $\theta*$ with possibility $\frac{p(\theta^_|\mathcal{D})}{M g(\theta^_)}$.
+Sampling auxiliary variable and accepting/declining $\theta^\*$ is equivalent to accepting $\theta*$ with possibility $\frac{p(\theta^\* \mid \mathcal{D})}{M g(\theta^\*)}$.
 
 ### Variational Inference
 
@@ -129,7 +130,7 @@ Sampling auxiliary variable and accepting/declining $\theta^*$ is equivalent to 
 The posterior density:
 
 $$
-p(\mathbf{z}|\mathbf{x}) = \frac{p(\mathbf{x}|\mathbf{z}) p(\mathbf{z})}{p(\mathbf{x})}
+p(\mathbf{z}\mid \mathbf{x}) = \frac{p(\mathbf{x}\mid \mathbf{z}) p(\mathbf{z})}{p(\mathbf{x})}
 $$
 
 is often intractable.
@@ -139,7 +140,7 @@ is often intractable.
 To approximate the intractable posterior, maximize the ELBO:
 
 $$
-\text{ELBO}(q) = \mathbb{E}\_{q(\mathbf{z})}[\log p(\mathbf{x}|\mathbf{z})] - \text{KL}(q(\mathbf{z}) || p(\mathbf{z}))
+\text{ELBO}(q) = \mathbb{E}_{q(\mathbf{z})}[\log p(\mathbf{x}\mid \mathbf{z})] - \text{KL}(q(\mathbf{z}) \mid \mid  p(\mathbf{z}))
 $$
 
 Maximizing ELBO is equivalent to minimizing the KL divergence between the approximate and true posterior.
@@ -148,7 +149,7 @@ Maximizing ELBO is equivalent to minimizing the KL divergence between the approx
 
 ### Sampling Methods
 
-- Monte Carlo integration: Sample $\mathbf{z}$ from $p(\mathbf{z}|\mathbf{x})$.
+- Monte Carlo integration: Sample $\mathbf{z}$ from $p(\mathbf{z}\mid \mathbf{x})$.
 - Importance Sampling: Use a proposal distribution $g(\mathbf{z})$ to sample and weight accordingly.
 
 ### Markov Chain Monte Carlo (MCMC)
