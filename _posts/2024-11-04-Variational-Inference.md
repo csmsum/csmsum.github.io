@@ -8,6 +8,7 @@ tags:
   - Inference
 categories: Variational Inference
 related_posts: false
+pseudocode: true
 ---
 
 # Central Limit Theorem for BNNs trained with Variational Inference
@@ -42,10 +43,10 @@ $$
 
 where $\mathbf{w}_{i} \sim p(\mathbf{w}|\mathcal{D})$ and $\hat{y}_{\mathbf{w}}(x)=f(x,\mathbf{w})$.
 That is, replacing
-| Neural Network (NN) | Bayesian Neural Network (BNN)                    |
-|---------------------|--------------------------------------------------|
-|$\mathbf{w}$  |$p(\mathbf{w}|\mathcal{D}) $                  |
-|$f\_{\mathbf{w}}(x)$|$\int f\_{\mathbf{w}}(x) p(\mathbf{w}|\mathcal{D}) d\mathbf{w}$ |
+| Neural Network (NN) | Bayesian Neural Network (BNN) |
+|----------------------|----------------------------------------------------|
+| $\mathbf{w}$ | $p(\mathbf{w}|\mathcal{D})$ |
+| $f_{\mathbf{w}}(x)$ | $\int f_{\mathbf{w}}(x) p(\mathbf{w}|\mathcal{D}) d\mathbf{w}$ |
 
 1. **Sampling Methods**: Sample $\mathbf{w}$ from $p(\mathbf{w}|\mathcal{D})$ and compute $p(y|\mathbf{w})$ for each sample.
 2. **Variational Methods**: Model $p(\mathbf{w}|\mathcal{D})$ using a parametrized distribution $q(\mathbf{w})$ and optimize to approximate the true posterior.
