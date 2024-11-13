@@ -44,10 +44,12 @@ $$
 where $\mathbf{w}\_i \sim p(\mathbf{w}\mid \mathcal{D})$ and $\hat{y}\_{\mathbf{w}}(x)=f(x,\mathbf{w})$.
 That is, replacing
 
-| Neural Network (NN)  | Bayesian Neural Network (BNN) \mid                                  |
 | -------------------- | ------------------------------------------------------------------- |
-| $\mathbf{w}$         | $p(\mathbf{w}\mid \mathcal{D})$                                     |
+| Neural Network (NN) | Bayesian Neural Network (BNN) \mid |
+| -------------------- | ------------------------------------------------------------------- |
+| $\mathbf{w}$ | $p(\mathbf{w}\mid \mathcal{D})$ |
 | $f\_{\mathbf{w}}(x)$ | $\int f\_{\mathbf{w}}(x) p(\mathbf{w}\mid \mathcal{D}) d\mathbf{w}$ |
+| -------------------- | ------------------------------------------------------------------- |
 
 1. **Sampling Methods**: Sample $\mathbf{w}$ from $p(\mathbf{w}\mid \mathcal{D})$ and compute $p(y\mid \mathbf{w})$ for each sample.
 2. **Variational Methods**: Model $p(\mathbf{w}\mid \mathcal{D})$ using a parametrized distribution $q(\mathbf{w})$ and optimize to approximate the true posterior.
