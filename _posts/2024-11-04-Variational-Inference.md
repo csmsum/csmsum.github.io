@@ -10,10 +10,6 @@ categories: Variational Inference
 related_posts: false
 ---
 
-\documentclass{article}
-\usepackage{amsmath}
-\begin{document}
-
 # Central Limit Theorem for BNNs trained with Variational Inference
 
 ## Variational Inference: A Review for Statisticians
