@@ -1,5 +1,5 @@
 site_name: Seungmin's Research Notes
-site_url: https://csmsum.github.io
+# site_url: https://csmsum.github.io
 
 theme:
   name: material
@@ -26,7 +26,7 @@ theme:
     text: Roboto
     code: Roboto Mono
 
-repo_url: https://github.com/csmsum/csmsum.github.io
+repo_url: https://github.com/csmsum/
 
 nav:
   - Home: index.md
