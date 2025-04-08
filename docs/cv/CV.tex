@@ -1,0 +1,186 @@
+%-------------------------
+% Resume in Latex
+% Author : Gabriel Sison
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Random Stuff %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[letterpaper, 11pt]{article}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-7pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{0pt}]
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Commands  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-3pt}}
+  }
+}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-3pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubheadingContinue}[2]{
+  \vspace{-3pt}
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+  \vspace{-3pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{0pt}}
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{0pt}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Heading  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{center}
+  % NAME
+  {\huge\scshape Seungmin Chou}
+  % SUBHEADING
+  \\ Stony Brook, New York, +1 (631) 590-9705,
+  \small
+  % EMAIL
+  \href{mailto:seungmin.chou@stonybrook.edu}{\raisebox{-0.2\height}\faEnvelope\  \underline{seungmin.chou@stonybrook.edu}} ~
+  % LINKEDIN
+  \href{https://www.linkedin.com/in/seugnmin-chu/}{\raisebox{-0.2\height}\faLinkedin\ \underline{Linkedin}}
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Education  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-----------EDUCATION-----------------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Stony Brook University} {Stony Brook, NY, USA}
+{Data Science, Ph.D. in Data Science} {August 2024 -- Present}
+
+\resumeSubheading
+{Chung-Ang University} {Seoul, Republic of Korea}
+{Applied Statistics, Bachelor of Applied Statistics, 4.19 / 4.5, 96.9 (100-Point Scale)}{March 2019 -- June 2024}
+
+\textbf{Selected Coursework:}
+\vspace{-8pt}
+\resumeItemListStart
+\resumeItem{\textbf{ Statistics :}  Data Mining, Bayesian Statistics, Mathematical Statistics, Regression Analysis, Multivariate Statistics}
+\resumeItem{\textbf{ Mathematics :}  Advanced Calculus, Topology (1), Calculus, Linear Algebra, Discrete Mathematics}
+\resumeItem{\textbf{ Computer Science :} Data Structure, Algorithms, Deep Learning for Image Data Analysis, Deep Learning For AI}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Experience  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Experience}
+\vspace{-3pt}
+\resumeSubHeadingListStart
+% Korea Institute of Science and Technology, Seoul National University Hospital
+\resumeSubheading
+{Korea Institute of Science and Technology (KIST)\textit{ \footnotesize co-affiliated at Seoul National University Hospital (SNUH) }}{Seoul, Republic of Korea}
+% POSITION 1
+{Researcher (Co-advised by: Prof. \href{https://scholar.google.co.kr/citations?user=XYh6Z0gAAAAJ}{\underline{Kyusung Choi}}, Doctor. \href{https://www.linkedin.com/in/kanghyun-ryu/}{\underline{Kwanghyun Rhyu}})}{February 2024 – Present}
+\resumeItemListStart
+\resumeItem{Developing Three-Dimensional Vision Transformer model for survival analysis with proportional-hazards assumption solely from magnetic resonance images, and identifying the genotypical features through the phenotypical information from the latent features.}
+\resumeItem{Predicting Hematoma Expansion through three-dimensional Vision Transformer using heterogeneous information identified by central and borderline of tumors at computerized tomography images}
+
+\resumeItemListEnd
+
+% AI Stat Lab
+\resumeSubheading
+{AI stat Lab}{Seoul, Republic of Korea}
+% POSITION 1
+{Researcher (Research Supervisor: \href{https://sites.google.com/view/cwlim/members/professor?authuser=0}{Prof. \underline{Changwon Lim}})}{March 2023 – January 2024}
+\resumeItemListStart
+\resumeItem{Designed an end-to-end nodule segmentation model utilizing CT image with self-supervised learning methods, referencing NoduleNet, Models Genesis, CBAM, QAM, etc.}
+\resumeItem{Contributed to designing an end-to-end framework adapting nnU-Net to segment glioma tumors with Brain Tumor Segmentation (BraTS) data.}
+\resumeItem{Navigated a DCASE challenge ‘Task 6’ to build an Automated Audio Captioning (AAC) model utilizing an encoder-decoder shape model with PaSST, PANNs, and Transformer decoder BART.}
+\resumeItem{Supervised undergraduate researchers in developing predictive models for surface temperature analysis using tabular meteorological data, contributing to the Korea Meteorological Administration's Big Data Festival.}
+\resumeItemListEnd
+
+% ASTARA MOVE
+\resumeSubheading
+{Astara Move}{Madrid, Spain}
+% POSITION 1
+{Data Analytics Internship from International Talent Program (ITP) (Fully conducted in English)}{February 2023 – March 2023}
+\resumeItemListStart
+\resumeItem{Analyzed 10,000+ clients (2022-23) to bring business insight: the correlation is not significant between the (financial) creditability of car-rental customers and the possibility of runaway after incidents. Composed Random Forest classification model alternatively.}
+\resumeItemListEnd
+
+% 인공지능인문학
+\resumeSubheading
+{AI Humanities Lab (AIH), Humanities Research Institute HK+ AI Humanities (HRI)}{Seoul, Republic of Korea}
+% POSITION 1
+{Researcher (Research Supervisor: Prof. Yunam, Cheong)}{October 2022 – February 2023}
+\resumeItemListStart
+\resumeItem{Conducted research on “Error Analysis in Artificial Intelligence Hate Speech Classification”, classifying misclassified data from Smilegate AI with the Unsmile Dataset into four different criteria of morphology, semantics, pragmatics, and erroneous labels.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+%%%%%%%%%%%%%%%%%%%%%%%%%   Scholarship & Awards  %%%%%%%%%%%%%%%%%%%%%%%%
+\section{Scholarship \& Awards }
+\vspace{-3pt}
+\resumeItemListStart
+\vspace{-5pt}
+\resumeItem{Recipient of the Hyundai Motors Chung-Monggu Scholarship for outstanding academic performance and research potential. \textit{[2023 -- present]}}
+\vspace{-5pt}
+\resumeItem{Academic scholarship received for excellence in undergraduate courses. \textit{June, December 2021, June 2023.}}
+\vspace{-4pt}
+\resumeItem{Awarded 2nd place at the 6th College Student Academic Research Paper Competition at Humanities Research Institute (HRI) with the topic ‘Error Analysis of a Hate Speech Classifier’. \textit{February 2023}}
+\vspace{-4pt}
+\resumeItem{Awarded at 2021 Business \& Economics 2nd student academic conference in Chung Ang University, College of Business \& Economics, with the topic ‘AI Chatbot and Chung-Ang University’s Charlie'. \textit{June 2021}}
+\resumeItemListEnd
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%   Skills  %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Skills}
+\vspace{-3pt}
+\begin{itemize}[leftmargin=0.15in, label={}]\small{\item{
+        \textbf{Programming Languages}{: Python (advanced; PyTorch, TensorFlow, Pandas, NumPy, Matplotlib, MONAI, TorchIO, TorchVision, DDP), R (advanced), \LaTeX (advanced), C/C++ (intermediate), SAS, SPSS} \\
+        \textbf{Operating Systems and Tools}{: Linux (advanced), Docker (intermediate)} \\
+        \textbf{Native Languages}{: Korean (native), English (full professional proficiency)}
+        }}
+\end{itemize}
+\end{document}

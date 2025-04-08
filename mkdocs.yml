@@ -1,0 +1,64 @@
+site_name: Seungmin's Research Notes
+site_url: https://csmsum.github.io
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - toc.integrate
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: brown # Warm beige-like vibe
+      accent: light green # Fresh minty highlight
+      toggle:
+        icon: material/lightbulb
+        name: Switch between light and dark modes
+    - scheme: slate
+      primary: deep purple # Moody night glow
+      accent: lime # Neon pop
+      toggle:
+        icon: material/lightbulb
+        name: Switch between light and dark modes
+
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+repo_url: https://github.com/csmsum/csmsum.github.io
+
+nav:
+  - Home: index.md
+  - About Me: about.md
+  - Study:
+      - Causal Inference: research/ci/ci.md
+      - Machine Learning:
+          - Overview: research/ml/ml.md
+          - Kernel Based Learning: research/ml/kernel based learning.md
+  # - Research
+  # - Publications
+  # - Teaching
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - pymdownx.arithmatex:
+      generic: true
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths:
+            - src
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
